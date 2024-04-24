@@ -1,0 +1,94 @@
+{% extends 'user/design.html' %}
+{% block userblock %}
+{% load staticfiles %}
+
+<style>
+    .updatedetails{
+    position: absolute;
+    top:20px;
+    left:130px;
+    padding:10px;
+    width:500px;
+}
+
+.updatedetails table{
+    width:30em;
+    text-align:center;
+    //border-collapse:collapse;
+    border-spacing:1px;
+    background:;
+}
+
+.updatedetails table tr th{
+    color:;
+}
+.updatedetails table tr th{
+background:
+padding:10px;
+}
+.updatedetails table tr td{
+background:rgb(0, 204, 102);
+padding:10px;
+}
+.updatedetails table tr:hover td{
+background:r);
+}
+.updateimage{
+border-style:none;
+ border-width:1px;
+ height:300px;
+ width:300px;
+ margin-top:40px;
+ margin-left:740px;
+ background: url("{% static 'image16.jpg' %}");
+ background-size: 100%100%;
+
+}
+
+
+
+</style>
+
+
+<div class="updatedetails">
+<form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td style="color:black">FIRST NAME</td>
+            <td><input type="text" name="FirstName" value="{{obj.firstname}}"></td>
+        </tr>
+        <tr>
+
+            <td style="color:">LAST NAME</td>
+            <td><input type="text" name="LastName" value="{{obj.lastname}}"></td>
+        </tr>
+                <tr>
+            <td style="color:">USER ID</td>
+            <td><input type="text" name="UserId" value="{{obj.userid}}"></td>
+        </tr>
+        <tr>
+            <td style="color:">PASSWORD</td>
+            <td><input type="text" name="Password" value="{{obj.password}}"></td>
+        </tr>
+        <tr>
+            <td style="color:">MOBILE NUMBER</td>
+            <td><input type="text" name="MobileNumber" value="{{obj.mblenum}}"></td>
+        </tr>
+        <tr>
+            <td style="color:"> EMAIL ID</td>
+            <td><input type="text" name="EmailId" value="{{obj.email}}"></td>
+        </tr>
+        <tr>
+            <td style="color:">GENDER</td>
+            <td><input type="text" name="Gender" value="{{obj.gender}}"></td>
+        </tr>
+<tr>
+            <td style="text-align:center;" colspan="2"><input type="submit" name="submit" value="SUBMIT" style="background:red;color:white"></td>
+        </tr>
+    </table>
+</form>
+
+</div>
+<div class="updateimage"></div>
+{% endblock %}

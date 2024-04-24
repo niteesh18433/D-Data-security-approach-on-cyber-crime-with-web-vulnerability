@@ -1,0 +1,110 @@
+{% extends 'user/design.html' %}
+{% block userblock %}
+{% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+         body{
+        background: url("{% static 'images15.jpg' %}");
+ background-size: cover;
+        }
+        .index{
+        border-style:none;
+        height:50px;
+        width:300px;
+        background:blue;
+        margin-left:450px;
+        text-align:center;
+        margin-top:-30px;
+        }
+         .mailtable{
+     position: absolute;
+    margin-top:50px;
+    left:120px;
+    padding:5px;
+    height:350px;
+    width:750px;
+    overflow:scroll;
+    float:left;
+    }
+    .mailtable table{
+    width:50em;
+    text-align:center;
+
+    border-spacing:1px;
+    background:;
+}
+
+
+.mailtable table tr th{
+background:rgb(0, 204, 102);
+padding:5px;
+}
+.mailtable table tr td{
+background:rgba(0,255,127,0.3);
+padding:5px;
+}
+.mailtable table tr:hover td{
+background:rgba(0,00.5);
+
+}
+.viewimage{
+border-style:solid;
+ border-width:1px;
+ height:350px;
+ width:400px;
+ margin-top:-400px;
+ margin-left:900px;
+ background: url("{% static 'image4.jpg' %}");
+ background-size: 100%100%;
+
+}
+.compose{
+border-style:none;
+ border-width:1px;
+ height:254px;
+ width:100px;
+ margin-top:-300px;
+ margin-left:0px;
+ background: rgba(0,0,255,0.5);
+ background-size: 100%100%;
+
+
+
+}
+
+    </style>
+</head>
+<body>
+
+
+<div class="mailtable">
+    <table>
+        <tr>
+            <th>MAIL ID</th>
+            <th>CHAT</th>
+            <th>DELETE</th>
+
+        </tr>
+
+{% for o in form %}
+        <tr>
+            <td>{{o.sendermail}}</td>
+            <td>{{o.chat}}</td>
+            <td ><a href="{% url 'deleteobj' o.id %}" style="text-decoration:none;color:black">Delete</a></td>
+        </tr>
+
+
+{% endfor %}
+        </table>
+</div>
+
+<div class="index"> <h3 style="color:white;padding-top:15px;">INBOX MESSAGE</h3></div>
+<button type="button" style="background:RED;margin-top:400px;margin-left:600px;"><a href="{% url 'userpage' %}" style="color:white;text-decoration:none">BACK</a></button>
+<div class="viewimage"></div>
+<div class="compose">
+   <a href="{% url 'userpage' %}" style="text-decoration:none;color:yellow;"> <p style="color:yellow;text-decoration:none;margin-left:20px;">COMPOSE </a><br>
+    <a href="{% url 'viewmailpage' %}" style="text-decoration:none;color:yellow;"><p style="color:yellow;text-decoration:none;margin-top:50px;margin-left:20px;"> INBOX </p></a><br>
+    <a href="{% url 'spampage' %}" style="color:yellow;text-decoration:none;"><p style="color:yellow;text-decoration:none;margin-top:50px;margin-left:20px;"> SPAM </a><br>
+</div>
+{% endblock %}

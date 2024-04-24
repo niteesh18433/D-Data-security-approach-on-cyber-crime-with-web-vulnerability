@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+    background: url("{% static 'images15.jpg' %}");
+ background-size: cover;
+    }
+        .menu table{
+          width:100%;
+          text-align:center;
+
+          }
+          .menu table td:hover{
+          background:rgba(0,0,255,0.3);
+
+          }
+          .menu table td{
+          background:rgba(0,0,255);
+
+         }
+          .menu table,.menu table th,.menu table td {
+    border: ;
+    border-collapse: collapse;
+
+}
+.menu table th,.menu table  td {
+    padding: 15px;
+
+    }
+
+
+          .topic h1{
+          color:black;
+          padding:2px;
+          text-align:center;
+          border-style:none;
+          height:100px;
+          width:1330px;
+          float:left;
+
+
+          }
+          .mainholder{
+
+          position:relative;
+          top:50px;
+          left:50px;
+          z-index:999;
+          float:left;
+          }
+
+
+    </style>
+</head>
+<body>
+<div class="background-image">
+    <div class="topic"><h1 style="color:yellow;margin-top:10px;margin-left:30px;border-style:none;width:1300px;height:40px;border-color:black;background:;">DATA SECURITY APPROACH ON CYBER CRIME WITH WEB VULNERABILITY</h1></div>
+<div class="menu">
+        <table>
+            <tr>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'admin_page' %}">USER DETAILS</a></td>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'analysis_page' %}"> ANALYSIS PAGE</a></td>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'viewfeedback' %}"> FEEDBACK</a></td>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'categoryanalysis_chart' 'pie' %}"> CHART PAGE</a></td>
+                <td><a  style="color:yellow;text-decoration: none;" href="{% url 'login' %}">LOGOUT</a></td>
+
+
+            </tr>
+        </table>
+    </div>
+</div>
+</div>
+<div class="marqee">
+
+</div>
+<div class="mainholder">
+{% block adminblock %}
+{% endblock %}
+</div>
+
+</body>
+</html>

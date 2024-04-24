@@ -1,0 +1,70 @@
+{% extends 'email_admin/admin_design.html' %}
+{% block adminblock %}
+{% load staticfiles %}
+<style>
+    .userdetails{
+     position: absolute;
+    margin-top:50px;
+    left:px;
+    padding:5px;
+    height:350px;
+    width:750px;
+    overflow:scroll;
+    float:left;
+    }
+    .userdetails table{
+    width:50em;
+    text-align:center;
+
+    border-spacing:1px;
+    background:;
+}
+
+
+.userdetails table tr th{
+background:rgb(0, 204, 102);
+padding:5px;
+}
+.userdetails table tr td{
+background:rgba(0,255,127,0.3);
+padding:5px;
+}
+.userdetails table tr:hover td{
+background:rgba(0,0,255,0.5);
+}
+.sideimage{
+border-style:solid;
+ border-width:1px;
+ height:380px;
+ width:360px;
+ margin-top:50px;
+ margin-left:830px;
+ background: url("{% static 'images13.png' %}");
+ background-size: 100%100%;
+float:left;
+}
+</style>
+<div class="userdetails">
+<table>
+    <tr>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>USER ID</th>
+        <th>MOBILE NUMBER</th>
+        <th>EMAIL</th>
+        <th>GENDER</th>
+    </tr>
+    {% for i in objects %}
+    <tr>
+    <td>{{i.firstname}}</td>
+    <td>{{i.lastname}}</td>
+    <td>{{i.userid}}</td>
+    <td>{{i.mblenum}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.gender}}</td>
+</tr>
+    {% endfor %}
+</table>
+</div>
+<div class="sideimage"></div>
+{%endblock%}
